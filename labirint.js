@@ -1,24 +1,59 @@
-function CreateLabirint(n,m){
-    this.arr = [];
+function CreateLabirint(width,height){
+   let labirint = [];
 
-    for(let i =0 ;i<n; i++){
-        this.arr[i] = [];
-        for(let j =0; j<m;j++){
-            this.arr[i][j] = Math.floor(getNumber());
+    for(let i = 0; i < width; i++){
+        labirint[i] = [];
+        for(let j = 0; j < height; j++){
+            labirint[i][j] = Math.floor(getNumber());
         }
     }
 
-    this.arr[0][0] = 1;
-    this.arr[n-1][m-1] = 2;
+    labirint[0][0] = 1;
+    labirint[width-1][height-1] = 2;
 
+
+    return labirint;
 }
 
 
 function getNumber(){
     let number = Math.random();
-
-    return number > 0.5? 3 : 4;
+    return number > 0.5 ? 3 : 4;
 }
 
-let arr = new CreateLabirint(2,3);
+let arr = CreateLabirint(6,6);
 console.log(arr);
+
+function drawLabirint(labirint){
+    for(let i = 0; i<labirint.length; i++){
+        for(let j = 0; j<labirint[i].length; j++){
+              if(labirint[i][j]===3){
+                  createBlock("wall");
+              }
+
+              else if(labirint[i][j]===4){
+                  createBlock("line");
+              }
+
+              else if(labirint[i][j]===1){
+                  createBlock("entrance")
+              }
+
+              else{
+                  createBlock("exit");
+              }
+        }
+    }
+}
+
+function createBlock(nameOfClass){
+ let div = document.createElement("div");
+ div.classList.add(nameOfClass);
+ document.body.appendChild(div);
+}
+
+drawLabirint(arr)
+
+
+
+
