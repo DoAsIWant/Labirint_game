@@ -1,3 +1,12 @@
+let form = document.querySelector(".run");
+let labWIDTH  = form.querySelector("#width").value;
+let labHEIGHTG = form.querySelector("#height").value;
+let btn = document.querySelector(".btn");
+
+
+
+
+
 function CreateLabirint(width,height){
    let labirint = [];
 
@@ -21,39 +30,45 @@ function getNumber(){
     return number > 0.5 ? 3 : 4;
 }
 
-let arr = CreateLabirint(6,6);
-console.log(arr);
+
 
 function drawLabirint(labirint){
     for(let i = 0; i<labirint.length; i++){
+      let el = createBlock("row", document.body);
         for(let j = 0; j<labirint[i].length; j++){
               if(labirint[i][j]===3){
-                  createBlock("wall");
+                  createBlock("wall", el);
               }
 
               else if(labirint[i][j]===4){
-                  createBlock("line");
+                  createBlock("line", el);
               }
 
               else if(labirint[i][j]===1){
-                  createBlock("entrance")
+                  createBlock("entrance", el)
               }
 
               else{
-                  createBlock("exit");
+                  createBlock("exit", el);
               }
         }
     }
 }
 
-function createBlock(nameOfClass){
+function createBlock(nameOfClass, block){
  let div = document.createElement("div");
  div.classList.add(nameOfClass);
- document.body.appendChild(div);
+ block.appendChild(div);
+ return div;
 }
 
-drawLabirint(arr)
 
-
+btn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    let labWIDTH  = form.querySelector("#width").value;
+    let labHEIGHTG = form.querySelector("#height").value;
+    let arr = CreateLabirint(labWIDTH,labHEIGHTG);
+    drawLabirint(arr);
+},once="true");
 
 
