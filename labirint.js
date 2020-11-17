@@ -3,8 +3,12 @@ let labWIDTH  = form.querySelector("#width").value;
 let labHEIGHTG = form.querySelector("#height").value;
 let btn = document.querySelector(".btn");
 
-
-
+let panel = document.querySelector(".panel");
+let btnUp = panel.querySelector(".up");
+let btnDown = panel.querySelector(".down");
+let btnLeft = panel.querySelector(".left");
+let btnRight = panel.querySelector(".right");
+let run = document.querySelector(".pers");
 
 
 function CreateLabirint(width,height){
@@ -49,7 +53,7 @@ function drawLabirint(labirint){
               }
 
               else{
-                  createBlock("exit", el);
+                  createBlock("entrance", el);
               }
         }
     }
@@ -69,6 +73,29 @@ btn.addEventListener("click", (e)=>{
     let labHEIGHTG = form.querySelector("#height").value;
     let arr = CreateLabirint(labWIDTH,labHEIGHTG);
     drawLabirint(arr);
+
 },once="true");
+
+
+btnDown.addEventListener("click",()=>{
+    run.classList.add("btn-left");
+});
+
+
+function createPath(labirint, entrance, exit){
+    let cord = entrance;
+
+    while(entrance.x!==exit.x && entrance.y!=exit.y){
+        let randomX = Math.random()*10;
+        let randomY = Math.random()*10;
+        cord.x = randomX;
+        cord.y = randomY;
+        for(let i = 0; i<labirint.length;i++){
+            for(let j = 0; j<labirint[i].length){
+                if(labirint[i][j]==)
+            }
+        }
+    }
+} 
 
 

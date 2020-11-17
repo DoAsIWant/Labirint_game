@@ -25,6 +25,38 @@
     border-top: 10px solid cyan;
 }
 
-.run{
+.pers{
     padding-bottom:100px;
+    background-color: deeppink;
+    width:30px;
+    height:30px;
+
+}
+
+.panel{
+    width:200px;
+    height:200px;
+    padding:40px;
+    background-color: deepskyblue;
+}
+.panel button{
+    font-size:25px;
+    background-color: mediumslateblue;
+    border:none;
+    color:#fff;
+    padding:10px;
+    width:50px;
+    height:50px;
+}
+
+.panel .bottom{
+    margin-left: 55px;
+    margin-top:10px;
+}
+.panel .up{
+    margin-top:10px;
+}
+
+.btn-left{
+    margin-left:20px;
 }
