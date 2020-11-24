@@ -1,8 +1,8 @@
 
-import CreateLabirint from "./create.js"
-import {drawLabirint}  from "./draw.js"
-import {User} from "./user.js"
-import {setKeyBoardHandler} from "./keyBoardHandler.js"
+import CreateLabirint from "../create.js"
+import {drawLabirint}  from "../draw.js"
+import {User} from "../user.js"
+import {setKeyBoardHandler} from "../keyBoardHandler.js"
 
 let form = document.querySelector(".run");
 let btn = document.querySelector(".btn");

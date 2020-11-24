@@ -1,9 +1,13 @@
 
 export function drawLabirint(labirint,user){
-
+    let container = document.querySelector(".container");
+    if(container){
+        container.remove()
+    }
+    container = createBlock("container",document.body);
     for(let i = 0; i<labirint.length; i++){
      
-      let el = createBlock("row", document.body);
+      let el = createBlock("row", container);
         for(let j = 0; j<labirint[i].length; j++){
             if(i === user.x && j === user.y){
              createBlock("pers",el);

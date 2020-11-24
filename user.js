@@ -6,31 +6,32 @@ export class User {
 
     }
     right(){
-        if((this.x > this.mass[this.y].length - 1)&&(mass[startX][startY] === 0)){
+        if((this.x > this.mass[this.y].length - 1) || (this.mass[this.x][this.y+1] === 3)){
             return;
         }
         this.y++;
 
     }
     left(){
-        if((this.x > this.mass[this.y].length - 1) &&(mass[startX][startY] === 0)){
+        if((this.x > this.mass[this.y].length - 1) || (this.mass[this.x][this.y-1] === 3)){
             return;
         }
         this.y--;
     }
 
     up(){
-        if((this.y > this.mass.length - 1) &&(mass[startX][startY] === 0)){
-            return;
-        }
-        this.x++;
-    }
-
-    down(){
-        if((this.y > this.mass.length - 1) &&(mass[startX][startY] === 0)){
+        
+        if(( this.x-1<0) && (this.y > this.mass.length - 1) || (this.mass[this.x-1][this.y] === 3)){
             return;
         }
         this.x--;
+    }
+
+    down(){
+        if(( this.x+1<0) && (this.y > this.mass.length - 1) || (this.mass[this.x+1][this.y] === 3)){
+            return;
+        }
+        this.x++;
     }
 
 
